@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,96 +34,59 @@
             z-index: -1;
         }
 
-        .main-wrapper {
-            display: flex;
-            gap: 25px;
-            width: 100%;
-            max-width: 1600px;
-            align-items: flex-start;
-        }
-
-        /* Widgets latéraux */
-        .sidebar-left, .sidebar-right {
-            flex: 0 0 280px;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .widget-container {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            backdrop-filter: blur(10px);
-            height: 400px;
-            overflow: hidden;
-        }
-
-        .widget-title {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #ffd700;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .widget-iframe {
-            width: 100%;
-            height: 350px;
-            border-radius: 8px;
-            border: none;
-        }
-        
         .container {
-            flex: 1;
+            width: 100%;
+            max-width: 1000px;
             background: rgba(15, 15, 16, 0.9);
             border-radius: 20px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 215, 0, 0.3);
             backdrop-filter: blur(10px);
-            max-width: 1000px;
             margin: 0 auto;
         }
         
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         
         .description {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
             color: #e0e0e0;
         }
         
         .level-selector {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .level-selector {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
         
         .level-btn {
-            padding: 12px 20px;
+            padding: 12px 10px;
             background: linear-gradient(to right, #3a3a3a, #2a2a2a);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             border: 1px solid #444;
+            text-align: center;
         }
         
         .level-btn:hover {
@@ -148,46 +110,89 @@
         
         .prize-info {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
             color: #ffd700;
             font-weight: bold;
         }
         
         .chests-container {
-            margin-bottom: 30px;
-            max-height: 600px;
+            margin-bottom: 20px;
+            max-height: 500px;
             overflow-y: auto;
-            padding: 10px;
+            padding: 5px;
         }
         
         .chests-grid {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 8px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 480px) {
+            .chests-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .chests-grid {
+                grid-template-columns: repeat(8, 1fr);
+                gap: 8px;
+            }
         }
         
         .chests-grid-13 {
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        @media (min-width: 480px) {
+            .chests-grid-13 {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .chests-grid-13 {
+                grid-template-columns: repeat(5, 1fr);
+            }
         }
         
         .chests-grid-25 {
             grid-template-columns: repeat(5, 1fr);
         }
         
+        @media (min-width: 768px) {
+            .chests-grid-25 {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
         .chests-grid-56 {
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(7, 1fr);
+        }
+        
+        @media (min-width: 768px) {
+            .chests-grid-56 {
+                grid-template-columns: repeat(8, 1fr);
+            }
         }
         
         .chests-grid-250 {
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(8, 1fr);
+        }
+        
+        @media (min-width: 768px) {
+            .chests-grid-250 {
+                grid-template-columns: repeat(10, 1fr);
+            }
         }
         
         .chest {
             background: linear-gradient(145deg, #8b4513, #6b3409);
-            border-radius: 10px;
-            height: 70px;
+            border-radius: 8px;
+            height: 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -200,6 +205,12 @@
             border: 2px solid #daa520;
         }
         
+        @media (min-width: 768px) {
+            .chest {
+                height: 70px;
+            }
+        }
+        
         .chest:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
@@ -208,23 +219,23 @@
         .chest::before {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
             border: 2px solid rgba(218, 165, 32, 0.5);
-            border-radius: 8px;
+            border-radius: 6px;
         }
         
         .chest-number {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: bold;
             color: #ffd700;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         
         .chest-lock {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #ffd700;
         }
         
@@ -241,60 +252,60 @@
         .stats {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(0, 255, 255, 0.3);
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
         
         .stat-item {
             text-align: center;
             flex: 1;
-            min-width: 120px;
+            min-width: 80px;
         }
         
         .stat-value {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #ffd700;
         }
         
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #e0e0e0;
         }
         
         .result {
             text-align: center;
-            margin-bottom: 20px;
-            min-height: 60px;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
+            min-height: 50px;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            padding: 10px;
-            border-radius: 10px;
+            padding: 8px;
+            border-radius: 8px;
             background: rgba(0, 0, 0, 0.4);
         }
         
         .controls {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 12px 30px;
+            padding: 10px 20px;
             background: linear-gradient(to right, #8b4513, #daa520);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -312,64 +323,14 @@
         
         .instructions {
             text-align: center;
-            margin-bottom: 20px;
-            color: #e0e0e0;
-        }
-        
-        .calculator {
-            margin-top: 30px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 255, 255, 0.3);
-        }
-        
-        .calculator h3 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-        
-        .calc-section {
             margin-bottom: 15px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-        
-        .calc-section h4 {
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        
-        .calc-input {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .calc-input label {
-            font-weight: bold;
-        }
-        
-        .calc-input input {
-            width: 80px;
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #444;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-        
-        .calc-result-text {
             color: #e0e0e0;
             font-size: 0.9rem;
         }
         
         .coins {
             position: absolute;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #ffd700;
             opacity: 0;
             animation: coinAnimation 1s ease-out forwards;
@@ -383,7 +344,7 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100px);
+                transform: translateY(-80px);
                 opacity: 0;
             }
         }
@@ -413,23 +374,23 @@
         .popup {
             background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
             border-radius: 15px;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
             border: 2px solid #ffd700;
-            max-width: 500px;
-            width: 90%;
+            max-width: 90%;
+            width: 400px;
         }
         
         .popup h3 {
             color: #ffd700;
-            margin-bottom: 15px;
-            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
         
         .popup p {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1rem;
             color: #e0e0e0;
         }
         
@@ -445,16 +406,16 @@
         }
         
         .popup-btn {
-            padding: 10px 25px;
+            padding: 8px 20px;
             background: linear-gradient(to right, #8b4513, #daa520);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         
         .popup-btn:hover {
@@ -464,131 +425,52 @@
     </style>
 </head>
 <body>
-    <div class="main-wrapper">
-        <!-- Sidebar gauche - Top Liker -->
-        <div class="sidebar-left">
-            <div class="widget-container">
-                <div class="widget-title">🏆 Top Liker</div>
-                <iframe class="widget-iframe" src="https://tikfinity.zerody.one/widget/topliker?cid=2260505" frameborder="0"></iframe>
+    <div class="container">
+        <h1>🎰 Coffres Mystères 🎰</h1>
+        
+        <div class="description">
+            <p>Trouvez le coffre contenant le trésor ! Misez 100 pièces pour jouer.</p>
+        </div>
+        
+        <div class="level-selector">
+            <button class="level-btn active" data-level="13">Facile (13 coffres)<br>Gain x5</button>
+            <button class="level-btn" data-level="25">Moyen (25 coffres)<br>Gain x10</button>
+            <button class="level-btn" data-level="56">Difficile (56 coffres)<br>Gain x20</button>
+            <button class="level-btn extreme" data-level="250">Extrême (250 coffres)<br>Gain x100</button>
+        </div>
+        
+        <div class="prize-info" id="prizeInfo">Trouvez le coffre avec 500 pièces !</div>
+        
+        <div class="chests-container">
+            <div class="chests-grid chests-grid-13" id="chestsGrid">
+                <!-- Les coffres seront générés par JavaScript -->
             </div>
         </div>
-
-        <!-- Contenu principal -->
-        <div class="container">
-            <h1>🎰 Coffres Mystères 🎰</h1>
-            
-            <div class="description">
-                <p>Trouvez le coffre contenant le trésor ! Misez 100 pièces pour jouer.</p>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="gamesPlayed">0</div>
+                <div class="stat-label">Parties jouées</div>
             </div>
-            
-            <div class="level-selector">
-                <button class="level-btn active" data-level="13">Facile (13 coffres)</button>
-                <button class="level-btn" data-level="25">Moyen (25 coffres)</button>
-                <button class="level-btn" data-level="56">Difficile (56 coffres)</button>
-                <button class="level-btn extreme" data-level="250">Extrême (250 coffres)</button>
+            <div class="stat-item">
+                <div class="stat-value" id="gamesWon">0</div>
+                <div class="stat-label">Parties gagnées</div>
             </div>
-            
-            <div class="prize-info" id="prizeInfo">Trouvez le coffre avec 500 pièces !</div>
-            
-            <div class="chests-container">
-                <div class="chests-grid chests-grid-13" id="chestsGrid">
-                    <!-- Les coffres seront générés par JavaScript -->
-                </div>
-            </div>
-            
-            <div class="result" id="result"></div>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-value" id="gamesPlayed">0</div>
-                    <div class="stat-label">Parties jouées</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="gamesWon">0</div>
-                    <div class="stat-label">Parties gagnées</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="gamesLost">0</div>
-                    <div class="stat-label">Parties perdues</div>
-                </div>
-            </div>
-            
-            <div class="controls">
-                <button class="btn" id="playBtn">Jouer</button>
-                <button class="btn btn-reset" id="resetStatsBtn">Nouvelle Partie</button>
-            </div>
-            
-            <div class="instructions">
-                <p>Choisissez un niveau, puis cliquez sur "Jouer" pour tenter votre chance</p>
-            </div>
-            
-            <div class="calculator">
-                <h3>📊 Calculateur de Gains</h3>
-                
-                <div class="calc-section">
-                    <h4>🎯 Niveau Facile (13 coffres)</h4>
-                    <div class="calc-input">
-                        <label>Mise :</label>
-                        <input type="number" id="bet13" value="100" min="1">
-                        <span style="color: #e0e0e0;">pièces</span>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-text" id="result13">
-                            Gain possible: 500 pièces | Probabilité: 7.69% | Espérance: -60 pièces
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="calc-section">
-                    <h4>🎯 Niveau Moyen (25 coffres)</h4>
-                    <div class="calc-input">
-                        <label>Mise :</label>
-                        <input type="number" id="bet25" value="100" min="1">
-                        <span style="color: #e0e0e0;">pièces</span>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-text" id="result25">
-                            Gain possible: 1000 pièces | Probabilité: 4.00% | Espérance: -60 pièces
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="calc-section">
-                    <h4>🎯 Niveau Difficile (56 coffres)</h4>
-                    <div class="calc-input">
-                        <label>Mise :</label>
-                        <input type="number" id="bet56" value="100" min="1">
-                        <span style="color: #e0e0e0;">pièces</span>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-text" id="result56">
-                            Gain possible: 2000 pièces | Probabilité: 1.79% | Espérance: -60 pièces
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="calc-section">
-                    <h4>🎯 Niveau Extrême (250 coffres)</h4>
-                    <div class="calc-input">
-                        <label>Mise :</label>
-                        <input type="number" id="bet250" value="100" min="1">
-                        <span style="color: #e0e0e0;">pièces</span>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-text" id="result250">
-                            Gain possible: 10000 pièces | Probabilité: 0.40% | Espérance: -60 pièces
-                        </div>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <div class="stat-value" id="gamesLost">0</div>
+                <div class="stat-label">Parties perdues</div>
             </div>
         </div>
-
-        <!-- Sidebar droite - Top Ranker -->
-        <div class="sidebar-right">
-            <div class="widget-container">
-                <div class="widget-title">🏆 Top Ranker</div>
-                <iframe class="widget-iframe" src="https://tikfinity.zerody.one/widget/ranking?cid=2260505" frameborder="0"></iframe>
-            </div>
+        
+        <div class="controls">
+            <button class="btn" id="playBtn">Jouer</button>
+            <button class="btn btn-reset" id="resetStatsBtn">Nouvelle Partie</button>
+        </div>
+        
+        <div class="instructions">
+            <p>Choisissez un niveau, puis cliquez sur "Jouer" pour tenter votre chance</p>
         </div>
     </div>
     
@@ -635,7 +517,6 @@
             // Initialiser le jeu
             updateStats();
             createChests();
-            initCalculator();
             
             // Gestionnaires d'événements pour les boutons de niveau
             levelButtons.forEach(button => {
@@ -831,56 +712,6 @@
                 updateStats();
                 createChests();
             });
-            
-            // Calculateur de gains
-            function initCalculator() {
-                const bet13 = document.getElementById('bet13');
-                const bet25 = document.getElementById('bet25');
-                const bet56 = document.getElementById('bet56');
-                const bet250 = document.getElementById('bet250');
-                
-                bet13.addEventListener('input', () => updateCalculation(13, bet13.value));
-                bet25.addEventListener('input', () => updateCalculation(25, bet25.value));
-                bet56.addEventListener('input', () => updateCalculation(56, bet56.value));
-                bet250.addEventListener('input', () => updateCalculation(250, bet250.value));
-                
-                // Calculs initiaux
-                updateCalculation(13, 100);
-                updateCalculation(25, 100);
-                updateCalculation(56, 100);
-                updateCalculation(250, 100);
-            }
-            
-            function updateCalculation(chests, bet) {
-                const betAmount = parseFloat(bet) || 0;
-                let prize, probability, expectedValue;
-                
-                if (chests === 13) {
-                    prize = betAmount * 5; // 5x la mise
-                    probability = (1/13 * 100).toFixed(2);
-                    expectedValue = (prize * (1/13) - betAmount).toFixed(0);
-                    document.getElementById('result13').textContent = 
-                        `Gain possible: ${prize} pièces | Probabilité: ${probability}% | Espérance: ${expectedValue} pièces`;
-                } else if (chests === 25) {
-                    prize = betAmount * 10; // 10x la mise
-                    probability = (1/25 * 100).toFixed(2);
-                    expectedValue = (prize * (1/25) - betAmount).toFixed(0);
-                    document.getElementById('result25').textContent = 
-                        `Gain possible: ${prize} pièces | Probabilité: ${probability}% | Espérance: ${expectedValue} pièces`;
-                } else if (chests === 56) {
-                    prize = betAmount * 20; // 20x la mise
-                    probability = (1/56 * 100).toFixed(2);
-                    expectedValue = (prize * (1/56) - betAmount).toFixed(0);
-                    document.getElementById('result56').textContent = 
-                        `Gain possible: ${prize} pièces | Probabilité: ${probability}% | Espérance: ${expectedValue} pièces`;
-                } else if (chests === 250) {
-                    prize = betAmount * 100; // 100x la mise
-                    probability = (1/250 * 100).toFixed(2);
-                    expectedValue = (prize * (1/250) - betAmount).toFixed(0);
-                    document.getElementById('result250').textContent = 
-                        `Gain possible: ${prize} pièces | Probabilité: ${probability}% | Espérance: ${expectedValue} pièces`;
-                }
-            }
         });
     </script>
 </body>
